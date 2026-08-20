@@ -1,0 +1,161 @@
+{
+  "users": [
+    {
+      "id": "u001",
+      "name": "Nguyen Van An",
+      "email": "an@gmail.com",
+      "password": "123456",
+      "phone": "0901234567",
+      "role": "customer"
+    },
+    {
+      "id": "u002",
+      "name": "Tran Thi Binh",
+      "email": "binh@gmail.com",
+      "password": "123456",
+      "phone": "0912345678",
+      "role": "customer"
+    },
+    {
+      "id": "u003",
+      "name": "Admin Hair Salon",
+      "email": "admin@hairbooking.com",
+      "password": "admin123",
+      "phone": "0987654321",
+      "role": "admin"
+    }
+  ],
+
+  "services": [
+    {
+      "id": "s001",
+      "name": "Cắt tóc nam",
+      "description": "Cắt tóc nam theo kiểu hiện đại, phù hợp với khuôn mặt.",
+      "price": 100000,
+      "duration": 30,
+      "category": "Haircut",
+      "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1"
+    },
+    {
+      "id": "s002",
+      "name": "Cắt + Gội",
+      "description": "Combo cắt tóc và gội đầu thư giãn.",
+      "price": 150000,
+      "duration": 45,
+      "category": "Haircut",
+      "image": "https://images.unsplash.com/photo-1622286342621-4bd786c2447c"
+    },
+    {
+      "id": "s003",
+      "name": "Nhuộm tóc",
+      "description": "Nhuộm tóc với nhiều màu thời trang, phù hợp với phong cách cá nhân.",
+      "price": 500000,
+      "duration": 120,
+      "category": "Color",
+      "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e"
+    },
+    {
+      "id": "s004",
+      "name": "Uốn tóc",
+      "description": "Tạo kiểu tóc xoăn tự nhiên và thời trang.",
+      "price": 600000,
+      "duration": 150,
+      "category": "Styling",
+      "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df"
+    },
+    {
+      "id": "s005",
+      "name": "Phục hồi tóc",
+      "description": "Phục hồi tóc hư tổn, giúp tóc mềm mượt và chắc khỏe.",
+      "price": 400000,
+      "duration": 90,
+      "category": "Treatment",
+      "image": "https://images.unsplash.com/photo-1560869713-7d0a29430803"
+    }
+  ],
+
+  "stylists": [
+    {
+      "id": "st001",
+      "name": "Nguyễn Văn A",
+      "phone": "0901111111",
+      "experience": 5,
+      "specialization": "Haircut",
+      "description": "Chuyên cắt tóc nam và tạo kiểu hiện đại.",
+      "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f"
+    },
+    {
+      "id": "st002",
+      "name": "Trần Minh B",
+      "phone": "0902222222",
+      "experience": 7,
+      "specialization": "Color",
+      "description": "Chuyên nhuộm và xử lý màu tóc.",
+      "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a"
+    },
+    {
+      "id": "st003",
+      "name": "Lê Thị C",
+      "phone": "0903333333",
+      "experience": 6,
+      "specialization": "Styling",
+      "description": "Chuyên uốn, tạo kiểu và phục hồi tóc.",
+      "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1"
+    }
+  ],
+
+  "appointments": [
+    {
+      "id": "a001",
+      "userId": "u001",
+      "serviceId": "s002",
+      "stylistId": "st001",
+      "date": "2026-08-20",
+      "time": "14:00",
+      "status": "confirmed",
+      "totalPrice": 150000,
+      "createdAt": "2026-08-19"
+    },
+    {
+      "id": "a002",
+      "userId": "u002",
+      "serviceId": "s003",
+      "stylistId": "st002",
+      "date": "2026-08-21",
+      "time": "10:00",
+      "status": "pending",
+      "totalPrice": 500000,
+      "createdAt": "2026-08-20"
+    },
+    {
+      "id": "a003",
+      "userId": "u001",
+      "serviceId": "s004",
+      "stylistId": "st003",
+      "date": "2026-08-15",
+      "time": "15:00",
+      "status": "completed",
+      "totalPrice": 600000,
+      "createdAt": "2026-08-14"
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": "r001",
+      "userId": "u001",
+      "serviceId": "s002",
+      "rating": 5,
+      "comment": "Dịch vụ rất tốt, nhân viên nhiệt tình.",
+      "createdAt": "2026-08-20"
+    },
+    {
+      "id": "r002",
+      "userId": "u002",
+      "serviceId": "s003",
+      "rating": 4,
+      "comment": "Màu tóc đẹp, nhân viên tư vấn nhiệt tình.",
+      "createdAt": "2026-08-18"
+    }
+  ]
+}
