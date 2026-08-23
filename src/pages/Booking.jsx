@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
+import { useAuth } from "../context/AuthContext";
 import {
   createAppointment,
   getServices,
@@ -11,7 +11,7 @@ import {
 
 function Booking() {
   const navigate = useNavigate();
-
+  const { currentUser, isLoggedIn } = useAuth();
   const [searchParams] = useSearchParams();
 
   const serviceId = searchParams.get("serviceId");
@@ -42,6 +42,7 @@ function Booking() {
     "17:00",
   ];
   const [appointments, setAppointments] = useState([]);
+
   useEffect(() => {
     getServices()
       .then((response) => {
@@ -71,7 +72,10 @@ function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
     // Kiểm tra thông tin bắt buộc
     if (!selectedService || !selectedStylist || !date || !time) {
       setMessage("Please complete all booking information.");
@@ -125,7 +129,7 @@ function Booking() {
     }
 
     const appointment = {
-      userId: "u001",
+      userId: currentUser.id,
       serviceId: selectedService,
       stylistId: selectedStylist,
       date: date,
@@ -225,7 +229,11 @@ function Booking() {
 
                   <Form.Select
                     value={selectedStylist}
-                    onChange={(e) => setSelectedStylist(e.target.value)}
+                    onChange={(e) => {
+                      setSelectedStylist(e.target.value);
+                      setTime("");
+                      setMessage("");
+                    }}
                   >
                     <option value="">-- Select Stylist --</option>
 
@@ -247,7 +255,11 @@ function Booking() {
                     type="date"
                     value={date}
                     min={new Date().toISOString().split("T")[0]}
-                    onChange={(e) => setDate(e.target.value)}
+                    onChange={(e) => {
+                      setDate(e.target.value);
+                      setTime("");
+                      setMessage("");
+                    }}
                   />
                 </Form.Group>
 
@@ -258,17 +270,60 @@ function Booking() {
                   </Form.Label>
 
                   <div className="time-slots">
-                    {timeSlots.map((slot) => (
-                      <Button
-                        key={slot}
-                        type="button"
-                        variant={time === slot ? "dark" : "outline-secondary"}
-                        className="time-slot"
-                        onClick={() => setTime(slot)}
-                      >
-                        {slot}
-                      </Button>
-                    ))}
+                    {timeSlots.map((slot) => {
+                      // Kiểm tra stylist đã được book
+                      const isBooked = appointments.some((appointment) => {
+                        return (
+                          appointment.stylistId === selectedStylist &&
+                          appointment.date === date &&
+                          appointment.time === slot &&
+                          appointment.status !== "cancelled"
+                        );
+                      });
+
+                      // Kiểm tra giờ đã qua nếu chọn hôm nay
+                      const isPastTime = (() => {
+                        if (!date) return false;
+
+                        const today = new Date();
+                        const todayString = today.toISOString().split("T")[0];
+
+                        if (date !== todayString) {
+                          return false;
+                        }
+
+                        const [hours, minutes] = slot.split(":");
+
+                        const selectedTime = new Date();
+                        selectedTime.setHours(
+                          Number(hours),
+                          Number(minutes),
+                          0,
+                          0,
+                        );
+
+                        return selectedTime <= today;
+                      })();
+
+                      const disabled =
+                        !date || !selectedStylist || isBooked || isPastTime;
+
+                      return (
+                        <Button
+                          key={slot}
+                          type="button"
+                          variant={time === slot ? "dark" : "outline-secondary"}
+                          className="time-slot"
+                          disabled={disabled}
+                          onClick={() => {
+                            setTime(slot);
+                            setMessage("");
+                          }}
+                        >
+                          {slot}
+                        </Button>
+                      );
+                    })}
                   </div>
                 </Form.Group>
 

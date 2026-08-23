@@ -6,7 +6,8 @@
       "email": "an@gmail.com",
       "password": "123456",
       "phone": "0901234567",
-      "role": "customer"
+      "role": "customer",
+      "status": "active"
     },
     {
       "id": "u002",
@@ -23,6 +24,14 @@
       "password": "admin123",
       "phone": "0987654321",
       "role": "admin"
+    },
+    {
+      "name": "Nguyen Dang Quan",
+      "email": "q@gmail.com",
+      "password": "123456",
+      "phone": "0963517233",
+      "role": "customer",
+      "id": "ux6Ho35"
     }
   ],
   "services": [
@@ -33,7 +42,8 @@
       "price": 100000,
       "duration": 30,
       "category": "Haircut",
-      "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1"
+      "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1",
+      "status": "active"
     },
     {
       "id": "s002",
@@ -42,7 +52,8 @@
       "price": 150000,
       "duration": 45,
       "category": "Haircut",
-      "image": "https://images.unsplash.com/photo-1622286342621-4bd786c2447c"
+      "image": "https://images.unsplash.com/photo-1622286342621-4bd786c2447c",
+      "status": "active"
     },
     {
       "id": "s003",
@@ -51,7 +62,8 @@
       "price": 500000,
       "duration": 120,
       "category": "Color",
-      "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e"
+      "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e",
+      "status": "active"
     },
     {
       "id": "s004",
@@ -60,7 +72,8 @@
       "price": 600000,
       "duration": 150,
       "category": "Styling",
-      "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df"
+      "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df",
+      "status": "active"
     },
     {
       "id": "s005",
@@ -69,7 +82,38 @@
       "price": 400000,
       "duration": 90,
       "category": "Treatment",
-      "image": "https://images.unsplash.com/photo-1560869713-7d0a29430803"
+      "image": "https://images.unsplash.com/photo-1560869713-7d0a29430803",
+      "status": "active"
+    },
+    {
+      "id": "s006",
+      "name": "Cạo mặt",
+      "description": "Cạo mặt và chăm sóc da mặt cơ bản, mang lại cảm giác thư giãn.",
+      "price": 80000,
+      "duration": 20,
+      "category": "Grooming",
+      "image": "https://images.unsplash.com/photo-1621605815971-fbc98d665033",
+      "status": "active"
+    },
+    {
+      "id": "s007",
+      "name": "Cắt + Gội + Sấy",
+      "description": "Combo chăm sóc tóc toàn diện gồm cắt, gội và sấy tạo kiểu.",
+      "price": 200000,
+      "duration": 60,
+      "category": "Haircut",
+      "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a",
+      "status": "active"
+    },
+    {
+      "id": "s008",
+      "name": "Tẩy tóc",
+      "description": "Tẩy tóc chuyên nghiệp trước khi thực hiện các màu tóc sáng.",
+      "price": 700000,
+      "duration": 150,
+      "category": "Color",
+      "image": "https://images.unsplash.com/photo-1519699047748-de8e457a634e",
+      "status": "active"
     }
   ],
   "stylists": [
@@ -80,25 +124,52 @@
       "experience": 5,
       "specialization": "Haircut",
       "description": "Chuyên cắt tóc nam và tạo kiểu hiện đại.",
-      "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f"
+      "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f",
+      "status": "active"
     },
     {
       "id": "st002",
-      "name": "Trần Minh B",
+      "name": "Trần Minh Đức",
       "phone": "0902222222",
       "experience": 7,
-      "specialization": "Color",
-      "description": "Chuyên nhuộm và xử lý màu tóc.",
-      "image": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a"
+      "specialization": "Coloring",
+      "description": "Chuyên nhuộm tóc và tư vấn màu tóc thời trang.",
+      "image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde",
+      "status": "active"
     },
     {
       "id": "st003",
-      "name": "Lê Thị C",
+      "name": "Lê Hoàng Nam",
       "phone": "0903333333",
-      "experience": 6,
+      "experience": 4,
       "specialization": "Styling",
-      "description": "Chuyên uốn, tạo kiểu và phục hồi tóc.",
-      "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1"
+      "description": "Chuyên uốn tóc, tạo kiểu và chăm sóc tóc.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+      "status": "active"
+    },
+    {
+      "id": "st004",
+      "name": "Phạm Quốc Huy",
+      "phone": "0904444444",
+      "experience": 6,
+      "specialization": "Haircut",
+      "description": "Chuyên cắt tóc nam và các kiểu tóc hiện đại.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      "status": "active"
+    },
+    {
+      "id": "st005",
+      "name": "Nguyễn Thảo Vy",
+      "phone": "0905555555",
+      "experience": 5,
+      "specialization": "Coloring",
+      "description": "Chuyên nhuộm, phục hồi và chăm sóc tóc nữ.",
+      "image": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df",
+      "status": "active"
+    },
+    {
+      "status": "active",
+      "id": "st006"
     }
   ],
   "appointments": [
@@ -145,6 +216,17 @@
       "totalPrice": 100000,
       "createdAt": "2026-08-23T06:02:39.568Z",
       "id": "Bj1QTU0"
+    },
+    {
+      "userId": "ux6Ho35",
+      "serviceId": "s001",
+      "stylistId": "st001",
+      "date": "2026-08-24",
+      "time": "09:00",
+      "status": "cancelled",
+      "totalPrice": 100000,
+      "createdAt": "2026-08-23T11:30:03.309Z",
+      "id": "Ks7ThvN"
     }
   ],
   "reviews": [
@@ -163,6 +245,15 @@
       "rating": 4,
       "comment": "Màu tóc đẹp, nhân viên tư vấn nhiệt tình.",
       "createdAt": "2026-08-18"
+    },
+    {
+      "appointmentId": "a003",
+      "userId": "u001",
+      "serviceId": "s004",
+      "rating": 5,
+      "comment": "good",
+      "createdAt": "2026-08-23T11:41:25.140Z",
+      "id": "TdxPT82"
     }
   ]
 }

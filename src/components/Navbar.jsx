@@ -1,18 +1,40 @@
-import { Container, Nav, Navbar as BootstrapNavbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Nav, Navbar, Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-function Navbar() {
+function Header() {
+  const navigate = useNavigate();
+
+  const { currentUser, isLoggedIn, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
-    <BootstrapNavbar expand="lg" className="navbar-custom">
+    <Navbar
+      expand="lg"
+      className="main-navbar"
+    >
       <Container>
-        <BootstrapNavbar.Brand as={Link} to="/" className="brand">
-          ✂️ Hair Booking
-        </BootstrapNavbar.Brand>
 
-        <BootstrapNavbar.Toggle aria-controls="main-navbar" />
+        {/* LOGO */}
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="navbar-logo"
+        >
+          Hair Booking
+        </Navbar.Brand>
 
-        <BootstrapNavbar.Collapse id="main-navbar">
-          <Nav className="ms-auto">
+        <Navbar.Toggle aria-controls="main-navbar" />
+
+        <Navbar.Collapse id="main-navbar">
+
+          {/* MENU */}
+          <Nav className="me-auto">
+
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
@@ -25,22 +47,60 @@ function Navbar() {
               Stylists
             </Nav.Link>
 
-            <Nav.Link as={Link} to="/my-appointments">
-              My Appointments
-            </Nav.Link>
+            {isLoggedIn && (
+              <Nav.Link
+                as={Link}
+                to="/my-appointments"
+              >
+                My Appointments
+              </Nav.Link>
+            )}
 
-            <Nav.Link as={Link} to="/profile">
-              Profile
-            </Nav.Link>
-
-            <Nav.Link as={Link} to="/login">
-              Login
-            </Nav.Link>
           </Nav>
-        </BootstrapNavbar.Collapse>
+
+          {/* RIGHT SIDE */}
+          <Nav className="align-items-lg-center">
+
+            {!isLoggedIn ? (
+              <>
+                <Nav.Link
+                  as={Link}
+                  to="/login"
+                >
+                  Login
+                </Nav.Link>
+
+                <Button
+                  as={Link}
+                  to="/register"
+                  className="register-header-btn"
+                >
+                  Register
+                </Button>
+              </>
+            ) : (
+              <>
+                <span className="user-welcome">
+                  Hi, {currentUser.name}
+                </span>
+
+                <Button
+                  variant="outline-dark"
+                  className="logout-btn"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Button>
+              </>
+            )}
+
+          </Nav>
+
+        </Navbar.Collapse>
+
       </Container>
-    </BootstrapNavbar>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default Header;

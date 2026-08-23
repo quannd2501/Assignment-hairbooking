@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Row,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 import { getServices } from "../services/api";
+import { useAuth } from "../context/AuthContext";
 
 function Home() {
   const [services, setServices] = useState([]);
+
+  const { currentUser, isLoggedIn } = useAuth();
 
   useEffect(() => {
     getServices()
@@ -22,25 +32,33 @@ function Home() {
 
   return (
     <div>
-      {/* Hero */}
+      {/* ================= HERO ================= */}
       <section className="hero">
         <Container>
           <Row className="align-items-center">
+
             <Col md={6}>
+              {isLoggedIn && currentUser && (
+                <p className="welcome-text">
+                  Welcome, {currentUser.name}!
+                </p>
+              )}
+
               <h1>Beautiful Hair, Beautiful You</h1>
 
               <p>
-                Book your favorite hair service with our professional
-                stylists.
+                Book your favorite hair service with our
+                professional stylists.
               </p>
 
               <Button
                 as={Link}
-                to="/services"
+                to={isLoggedIn ? "/services" : "/login"}
                 className="btn-book"
               >
                 Book Appointment
               </Button>
+
             </Col>
 
             <Col md={6}>
@@ -50,22 +68,32 @@ function Home() {
                 className="hero-image"
               />
             </Col>
+
           </Row>
         </Container>
       </section>
 
-      {/* Services */}
+      {/* ================= SERVICES ================= */}
       <section className="services-section">
         <Container>
+
           <div className="section-title">
             <h2>Our Services</h2>
-            <p>Choose the perfect service for your hair</p>
+
+            <p>
+              Choose the perfect service for your hair
+            </p>
           </div>
 
           <Row>
             {services.map((service) => (
-              <Col md={4} key={service.id} className="mb-4">
-                <Card className="service-card">
+              <Col
+                md={4}
+                key={service.id}
+                className="mb-4"
+              >
+                <Card className="service-card h-100">
+
                   <Card.Img
                     variant="top"
                     src={service.image}
@@ -73,7 +101,9 @@ function Home() {
                   />
 
                   <Card.Body>
-                    <Card.Title>{service.name}</Card.Title>
+                    <Card.Title>
+                      {service.name}
+                    </Card.Title>
 
                     <h5 className="price">
                       {formatPrice(service.price)}
@@ -87,6 +117,7 @@ function Home() {
                       View Detail
                     </Button>
                   </Card.Body>
+
                 </Card>
               </Col>
             ))}
@@ -101,6 +132,7 @@ function Home() {
               View All Services
             </Button>
           </div>
+
         </Container>
       </section>
     </div>

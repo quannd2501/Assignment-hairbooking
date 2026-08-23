@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-
+import { useAuth } from "../context/AuthContext";
 import { loginUser } from "../services/api";
 
 function Login() {
   const navigate = useNavigate();
-
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,15 +36,13 @@ function Login() {
         }
 
         const user = users[0];
+        login(user);
 
-        // Lưu user đăng nhập
-        localStorage.setItem(
-          "currentUser",
-          JSON.stringify(user)
-        );
-
-        // Chuyển về Home
-        navigate("/");
+        if (user.role === "admin") {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
       })
       .catch((error) => {
         console.error("Login error:", error);
@@ -59,14 +57,12 @@ function Login() {
     <Container className="login-page py-5">
       <Card className="login-card mx-auto">
         <Card.Body>
-
           <div className="login-title">
             <h1>Welcome Back</h1>
             <p>Login to your Hair Booking account</p>
           </div>
 
           <Form onSubmit={handleSubmit}>
-
             {/* EMAIL */}
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
@@ -98,11 +94,7 @@ function Login() {
             </Form.Group>
 
             {/* MESSAGE */}
-            {message && (
-              <div className="login-message">
-                {message}
-              </div>
-            )}
+            {message && <div className="login-message">{message}</div>}
 
             {/* LOGIN */}
             <Button
@@ -112,16 +104,11 @@ function Login() {
             >
               {loading ? "Logging in..." : "Login"}
             </Button>
-
           </Form>
 
           <div className="register-link">
-            Don't have an account?{" "}
-            <Link to="/register">
-              Register
-            </Link>
+            Don't have an account? <Link to="/register">Register</Link>
           </div>
-
         </Card.Body>
       </Card>
     </Container>
