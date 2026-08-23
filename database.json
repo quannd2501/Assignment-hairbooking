@@ -25,7 +25,6 @@
       "role": "admin"
     }
   ],
-
   "services": [
     {
       "id": "s001",
@@ -73,7 +72,6 @@
       "image": "https://images.unsplash.com/photo-1560869713-7d0a29430803"
     }
   ],
-
   "stylists": [
     {
       "id": "st001",
@@ -103,7 +101,6 @@
       "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1"
     }
   ],
-
   "appointments": [
     {
       "id": "a001",
@@ -137,9 +134,19 @@
       "status": "completed",
       "totalPrice": 600000,
       "createdAt": "2026-08-14"
+    },
+    {
+      "userId": "u001",
+      "serviceId": "s001",
+      "stylistId": "st001",
+      "date": "2026-08-23",
+      "time": "14:00",
+      "status": "pending",
+      "totalPrice": 100000,
+      "createdAt": "2026-08-23T06:02:39.568Z",
+      "id": "Bj1QTU0"
     }
   ],
-
   "reviews": [
     {
       "id": "r001",

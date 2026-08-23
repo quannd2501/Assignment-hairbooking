@@ -1,0 +1,535 @@
+/* =========================
+   GLOBAL
+========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #faf8f5;
+  color: #333;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar-custom {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8b5e3c !important;
+}
+
+.navbar-custom .nav-link {
+  color: #333;
+  margin-left: 15px;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #8b5e3c;
+}
+
+
+/* =========================
+   HOME - HERO
+========================= */
+
+.hero {
+  padding: 80px 0;
+  background-color: #f3e9df;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn-book {
+  background-color: #8b5e3c !important;
+  border: none !important;
+  padding: 12px 25px;
+}
+
+.btn-book:hover {
+  background-color: #6f472c !important;
+}
+
+.hero-image {
+  width: 90%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HOME - SERVICES
+========================= */
+
+.services-section {
+  padding: 70px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.section-title p {
+  color: #777;
+}
+
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  height: 230px;
+  object-fit: cover;
+}
+
+.service-card .card-body {
+  padding: 20px;
+}
+
+.service-card .card-title {
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.service-card .card-text {
+  color: #666;
+  min-height: 48px;
+}
+
+.service-card .price {
+  color: #8b5e3c;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.service-card .btn-dark {
+  background-color: #8b5e3c;
+  border-color: #8b5e3c;
+}
+
+.service-card .btn-dark:hover {
+  background-color: #6f472c;
+  border-color: #6f472c;
+}
+
+
+/* =========================
+   SERVICES PAGE
+========================= */
+
+.services-page {
+  min-height: 600px;
+}
+
+.services-page .form-control,
+.services-page .form-select {
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.services-page .form-control:focus,
+.services-page .form-select:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 0 0.2rem rgba(139, 94, 60, 0.15);
+}
+
+.services-page .text-center h4 {
+  font-weight: bold;
+}
+
+.services-page .text-center p {
+  color: #777;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background-color: #2f2a27;
+  color: white;
+  padding: 40px 0;
+  margin-top: 50px;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-content h4 {
+  margin-bottom: 15px;
+}
+
+.footer-content p {
+  color: #ddd;
+}
+
+/* =========================
+   SERVICE DETAIL
+========================= */
+
+.service-detail {
+  min-height: 650px;
+}
+
+.service-detail-image {
+  width: 90%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+.service-detail-content {
+  padding: 20px;
+}
+
+.service-detail-content h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.service-category {
+  display: inline-block;
+  background-color: #f3e9df;
+  color: #8b5e3c;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.service-price {
+  color: #8b5e3c;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.service-description {
+  color: #666;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.service-detail .btn-outline-dark {
+  border-color: #8b5e3c;
+  color: #8b5e3c;
+}
+
+.service-detail .btn-outline-dark:hover {
+  background-color: #8b5e3c;
+  border-color: #8b5e3c;
+  color: white;
+}
+.service-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.service-buttons .btn {
+  flex: 1;
+}
+
+.service-buttons .btn-outline-dark {
+  border-color: #8b5e3c;
+  color: #8b5e3c;
+}
+
+.service-buttons .btn-outline-dark:hover {
+  background-color: #8b5e3c;
+  border-color: #8b5e3c;
+  color: white;
+}
+/* =========================
+   STYLISTS PAGE
+========================= */
+
+.stylists-page {
+  min-height: 600px;
+}
+
+.stylist-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.stylist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.stylist-card img {
+  height: 320px;
+  object-fit: cover;
+}
+
+.stylist-card .card-body {
+  padding: 20px;
+}
+
+.stylist-card .card-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.stylist-specialization {
+  display: inline-block;
+  background-color: #f3e9df;
+  color: #8b5e3c;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.stylist-card .card-text {
+  color: #666;
+  line-height: 1.6;
+}
+/* =========================
+   BOOKING PAGE
+========================= */
+
+.booking-page {
+  min-height: 650px;
+}
+
+.booking-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-card .card-body {
+  padding: 35px;
+}
+
+.booking-card .form-control,
+.booking-card .form-select {
+  height: 45px;
+  border-radius: 8px;
+}
+
+.booking-card .form-control:focus,
+.booking-card .form-select:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 0 0.2rem rgba(139, 94, 60, 0.15);
+}
+
+/* Selected service */
+
+.selected-service {
+  background-color: #faf8f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.booking-service-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.selected-service h4 {
+  color: #8b5e3c;
+  font-weight: bold;
+}
+
+.selected-service p {
+  color: #666;
+}
+
+/* Time */
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-slot {
+  min-width: 80px;
+}
+
+/* Summary */
+
+.booking-summary {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f3e9df;
+  border-radius: 10px;
+}
+
+.booking-summary h4 {
+  margin-bottom: 20px;
+  color: #8b5e3c;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  font-size: 20px;
+  color: #8b5e3c;
+}
+
+/* Message */
+
+.booking-message {
+  margin-top: 20px;
+  padding: 12px;
+  text-align: center;
+  background-color: #f3e9df;
+  color: #8b5e3c;
+  border-radius: 8px;
+}
+
+/* Confirm */
+
+.confirm-booking-btn {
+  height: 48px;
+  background-color: #8b5e3c !important;
+  border: none !important;
+  font-size: 16px;
+}
+
+.confirm-booking-btn:hover {
+  background-color: #6f472c !important;
+}
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-card .card-body {
+  padding: 40px;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-title h1 {
+  color: #8b5e3c;
+  font-weight: bold;
+}
+
+.login-title p {
+  color: #777;
+}
+
+.login-card .form-control {
+  height: 45px;
+  border-radius: 8px;
+}
+
+.login-card .form-control:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 0 0.2rem rgba(139, 94, 60, 0.15);
+}
+
+.login-btn {
+  height: 45px;
+  margin-top: 10px;
+  background-color: #8b5e3c !important;
+  border: none !important;
+}
+
+.login-btn:hover {
+  background-color: #6f472c !important;
+}
+
+.login-message {
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: center;
+  background-color: #f8d7da;
+  color: #842029;
+  border-radius: 6px;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.register-link a {
+  color: #8b5e3c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
