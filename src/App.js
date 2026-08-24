@@ -14,7 +14,7 @@ import Stylists from "./pages/Stylists";
 import Booking from "./pages/Booking";
 import MyAppointments from "./pages/MyAppointments";
 import Profile from "./pages/Profile";
-
+import CustomerLayout from "./components/CustomerLayout";
 import AdminLayout from "./admin/components/AdminLayout";
 import AdminDashboard from "./admin/pages/AdminDashboard";
 import AdminServices from "./admin/pages/AdminServices";

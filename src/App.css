@@ -806,6 +806,65 @@ body {
   padding: 30px;
   overflow-x: auto;
 }
+.admin-sidebar-header {
+  padding: 25px 20px;
+  border-bottom: 1px solid #3a3f44;
+}
+
+.admin-sidebar-header h4 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.admin-sidebar-header p {
+  margin: 5px 0 0;
+  color: #adb5bd;
+  font-size: 14px;
+}
+.admin-sidebar-footer {
+  margin-top: auto;
+  padding: 18px;
+  border-top: 1px solid #3a3f44;
+}
+
+/* Admin user */
+
+.admin-user {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.admin-user strong {
+  font-size: 14px;
+  color: white;
+}
+
+.admin-user small {
+  margin-top: 3px;
+  color: #adb5bd;
+  font-size: 12px;
+}
+
+/* Logout */
+
+.admin-logout-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dc3545;
+  border-radius: 6px;
+  background: transparent;
+  color: #dc3545;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-logout-btn:hover {
+  background: #dc3545;
+  color: white;
+}
 /* =========================
    ADMIN DASHBOARD
 ========================= */
